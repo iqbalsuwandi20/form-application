@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:form_application/widget/appbar_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,9 +11,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        "Test guys"
+    return const Scaffold(
+      appBar: AppBarWidget(
+          title: "Form Application",
+          backgroundColor: Color(0xffc71585),
       ),
     );
   }
