@@ -1,3 +1,4 @@
+import 'package:form_application/table/user.dart';
 import 'package:gsheets/gsheets.dart';
 
 class UserSheetsApi {
@@ -22,8 +23,15 @@ class UserSheetsApi {
   static Worksheet? _userSheet;
 
   static Future init() async {
-    final spreadsheet = await _gsheets.spreadsheet(_spreadsheetId);
-    _userSheet = await _getWorkSheet(spreadsheet, title: 'Users');
+    try {
+      final spreadsheet = await _gsheets.spreadsheet(_spreadsheetId);
+      _userSheet = await _getWorkSheet(spreadsheet, title: 'Users');
+
+      final firstRow = UserFields.getFields();
+      _userSheet!.values.insertRow(1, firstRow);
+    } catch (e) {
+      print("Init error: $e");
+    }
   }
 
   static Future<Worksheet> _getWorkSheet(
