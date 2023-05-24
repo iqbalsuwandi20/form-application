@@ -25,26 +25,66 @@ class _HomePageState extends State<HomePage> {
         child: ButtonWidget(
           text: 'Save',
           onClicked: () async {
-            final user = User(
-              id: 1,
-              date: 121212,
-              barcode: 12,
-              productName: "Cycle",
-              division: "Staff",
-              posNo: 12,
-              transNo: 12,
-              newTransNo: 15,
-              contentIssue: "Just test",
-              cancelItem: false,
-              exchange: false,
-              refund: false,
-              wrongPayment: false,
-              other: "Just Test Bro!",
-            );
-            await UserSheetsApi.insert([user.toJson()]);
+            insertUsers();
+            // final user = User(
+            //   id: 1,
+            //   date: 121212,
+            //   barcode: 12,
+            //   productName: "Cycle",
+            //   division: "Staff",
+            //   posNo: 12,
+            //   transNo: 12,
+            //   newTransNo: 15,
+            //   contentIssue: "Just test",
+            //   cancelItem: false,
+            //   exchange: false,
+            //   refund: false,
+            //   wrongPayment: false,
+            //   other: "Just Test Bro!",
+            // );
+            // await UserSheetsApi.insert([user.toJson()]);
           },
         ),
       ),
     );
+  }
+  Future insertUsers() async {
+    final users =
+    [
+      User(
+          id: 1,
+          date: 120312,
+          barcode: 12,
+          productName: "pen",
+          division: "Manager",
+          posNo: 12,
+          transNo: 12,
+          newTransNo: 12,
+          contentIssue: "Test User 1",
+          cancelItem: true,
+          exchange: false,
+          refund: false,
+          wrongPayment: false,
+          other: "nothing"
+      ),
+      User(
+          id: 2,
+          date: 120312,
+          barcode: 12,
+          productName: "pen",
+          division: "Manager",
+          posNo: 12,
+          transNo: 12,
+          newTransNo: 12,
+          contentIssue: "Test User 1",
+          cancelItem: true,
+          exchange: false,
+          refund: false,
+          wrongPayment: false,
+          other: "nothing"
+      ),
+    ];
+    final jsonUsers = users.map((user) => user.toJson()).toList();
+    await UserSheetsApi.insert(jsonUsers);
   }
 }
