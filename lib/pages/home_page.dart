@@ -13,8 +13,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: AppBarWidget(
-          title: "Form Application",
-          backgroundColor: Color(0xffc71585),
+        title: "Form Application",
+        backgroundColor: Color(0xffc71585),
       ),
     );
   }
