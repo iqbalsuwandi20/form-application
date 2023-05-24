@@ -31,3 +31,53 @@ class UserFields {
     other,
   ];
 }
+
+class User {
+  final int? id;
+  final int date;
+  final int barcode;
+  final String productName;
+  final String division;
+  final int posNo;
+  final int transNo;
+  final int newTransNo;
+  final String contentIssue;
+  final bool cancelItem;
+  final bool exchange;
+  final bool refund;
+  final bool wrongPayment;
+  final String other;
+
+  const User({
+    this.id,
+    required this.date,
+    required this.barcode,
+    required this.productName,
+    required this.division,
+    required this.posNo,
+    required this.transNo,
+    required this.newTransNo,
+    required this.contentIssue,
+    required this.cancelItem,
+    required this.exchange,
+    required this.refund,
+    required this.wrongPayment,
+    required this.other,
+  });
+
+  Map<String, dynamic> toJson() => {
+    UserFields.id: id,
+    UserFields.date: date,
+    UserFields.barcode: barcode,
+    UserFields.productName: division,
+    UserFields.posNo: posNo,
+    UserFields.transNo: transNo,
+    UserFields.newTransNo: newTransNo,
+    UserFields.contentIssue: contentIssue,
+    UserFields.cancelItem: cancelItem,
+    UserFields.exchange: exchange,
+    UserFields.refund: refund,
+    UserFields.wrongPayment: wrongPayment,
+    UserFields.other: other,
+  };
+}

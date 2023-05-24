@@ -25,23 +25,23 @@ class _HomePageState extends State<HomePage> {
         child: ButtonWidget(
           text: 'Save',
           onClicked: () async {
-            final user = {
-              UserFields.id: 1,
-              UserFields.date: 23232012,
-              UserFields.barcode: 13,
-              UserFields.productName: "Car",
-              UserFields.division: "Manager",
-              UserFields.posNo: 12,
-              UserFields.transNo: 15,
-              UserFields.newTransNo: 1212,
-              UserFields.contentIssue: "Hai",
-              UserFields.cancelItem: true,
-              UserFields.exchange: false,
-              UserFields.refund: false,
-              UserFields.wrongPayment: false,
-              UserFields.other: false,
-            };
-            await UserSheetsApi.insert([user]);
+            final user = User(
+              id: 1,
+              date: 121212,
+              barcode: 12,
+              productName: "Cycle",
+              division: "Staff",
+              posNo: 12,
+              transNo: 12,
+              newTransNo: 15,
+              contentIssue: "Just test",
+              cancelItem: false,
+              exchange: false,
+              refund: false,
+              wrongPayment: false,
+              other: "Just Test Bro!",
+            );
+            await UserSheetsApi.insert([user.toJson()]);
           },
         ),
       ),
