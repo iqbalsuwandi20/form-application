@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:form_application/api/user_sheets_api.dart';
 import 'package:form_application/pages/splash_screen_page.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await UserSheetsApi.init();
+
   runApp(const MyApp());
 }
 
