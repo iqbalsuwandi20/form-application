@@ -34,13 +34,13 @@ class UserFields {
 
 class User {
   final int? id;
-  final int date;
-  final int barcode;
+  final String date;
+  final String barcode;
   final String productName;
   final String division;
-  final int posNo;
-  final int transNo;
-  final int newTransNo;
+  final String posNo;
+  final String transNo;
+  final String newTransNo;
   final String contentIssue;
   final bool cancelItem;
   final bool exchange;

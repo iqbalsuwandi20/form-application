@@ -21,7 +21,7 @@ class ButtonWidget extends StatelessWidget {
       child: FittedBox(
         child: Text(
           text,
-          style: const TextStyle(fontSize: 20, color: Colors.amber),
+          style: const TextStyle(fontSize: 20, color: Color(0xffc71585)),
         ),
       ),
     );
