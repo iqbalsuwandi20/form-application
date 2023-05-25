@@ -23,51 +23,16 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.all(32),
-        child: UserFormWidget(
-          onSavedUser: (user) async {
-            await UserSheetsApi.insert([user.toJson()]);
-          },
+        child: SingleChildScrollView(
+          child: UserFormWidget(
+            onSavedUser: (user) async {
+              final id = await UserSheetsApi.getRowCount() + 1;
+              final newUser = user.copy(id: id);
+              await UserSheetsApi.insert([newUser.toJson()]);
+            },
+          ),
         ),
       ),
     );
   }
-  // Future insertUsers() async {
-  //   final users =
-  //   [
-  //     User(
-  //         id: 1,
-  //         date: "120312",
-  //         barcode: "12",
-  //         productName: "pen",
-  //         division: "Manager",
-  //         posNo: "12",
-  //         transNo: "12",
-  //         newTransNo: "12",
-  //         contentIssue: "Test User 1",
-  //         cancelItem: true,
-  //         exchange: false,
-  //         refund: false,
-  //         wrongPayment: false,
-  //         other: "nothing"
-  //     ),
-  //     User(
-  //         id: 2,
-  //         date: "120312",
-  //         barcode: "12",
-  //         productName: "pen",
-  //         division: "Manager",
-  //         posNo: "12",
-  //         transNo: "12",
-  //         newTransNo: "12",
-  //         contentIssue: "Test User 1",
-  //         cancelItem: true,
-  //         exchange: false,
-  //         refund: false,
-  //         wrongPayment: false,
-  //         other: "nothing"
-  //     ),
-  //   ];
-  //   final jsonUsers = users.map((user) => user.toJson()).toList();
-  //   await UserSheetsApi.insert(jsonUsers);
-  // }
 }

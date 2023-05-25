@@ -65,11 +65,46 @@ class User {
     required this.other,
   });
 
+  User copy
+  ({
+    int? id,
+    String? date,
+    String? barcode,
+    String? productName,
+    String? division,
+    String? posNo,
+    String? transNo,
+    String? newTransNo,
+    String? contentIssue,
+    bool? cancelItem,
+    bool? exchange,
+    bool? refund,
+    bool? wrongPayment,
+    String? other,
+  }) =>
+      User(
+        id: id ?? this.id,
+        date: date ?? this.date,
+        barcode: barcode ?? this.barcode,
+        productName: productName ?? this.productName,
+        division: division ?? this.division,
+        posNo: posNo ?? this.posNo,
+        transNo: transNo ?? this.transNo,
+        newTransNo: newTransNo ?? this.newTransNo,
+        contentIssue: contentIssue ?? this.contentIssue,
+        cancelItem: cancelItem ?? this.cancelItem,
+        exchange: exchange ?? this.exchange,
+        refund: refund ?? this.refund,
+        wrongPayment: wrongPayment ?? this.wrongPayment,
+        other: other ?? this.other,
+      );
+
   Map<String, dynamic> toJson() => {
     UserFields.id: id,
     UserFields.date: date,
     UserFields.barcode: barcode,
-    UserFields.productName: division,
+    UserFields.productName: productName,
+    UserFields.division: division,
     UserFields.posNo: posNo,
     UserFields.transNo: transNo,
     UserFields.newTransNo: newTransNo,
