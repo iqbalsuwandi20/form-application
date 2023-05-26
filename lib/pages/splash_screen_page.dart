@@ -40,8 +40,13 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               color: Colors.white,
             ),
           ),
-          Center(
-            child: Image.asset('assets/images/logo.png'),
+          const Center(
+            // child: Image.asset('assets/images/logo.png'),
+            child: Icon(
+              Icons.front_hand,
+              color: Color(0xffc71585),
+              size: 300,
+            ),
           ),
         ],
       ),
