@@ -14,6 +14,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getUsers();
+  }
+
+  Future getUsers() async {
+    final user = await UserSheetsApi.getById(2);
+    print(user!.toJson());
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarWidget(
@@ -26,9 +38,9 @@ class _HomePageState extends State<HomePage> {
         child: SingleChildScrollView(
           child: UserFormWidget(
             onSavedUser: (user) async {
-              final id = await UserSheetsApi.getRowCount() + 1;
-              final newUser = user.copy(id: id);
-              await UserSheetsApi.insert([newUser.toJson()]);
+              // final id = await UserSheetsApi.getRowCount() + 1;
+              // final newUser = user.copy(id: id);
+              // await UserSheetsApi.insert([newUser.toJson()]);
             },
           ),
         ),

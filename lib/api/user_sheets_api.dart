@@ -51,9 +51,15 @@ class UserSheetsApi {
     return lastRow == null ? 0 : int.tryParse(lastRow.first) ?? 0;
   }
 
+  static Future<User?> getById(int id) async {
+    if (_userSheet == null) return null;
+
+    final json = await _userSheet!.values.map.rowByKey(id, fromColumn: 1);
+    return json == null ? null : User.fromJson(json);
+  }
+
   static Future insert(List<Map<String, dynamic>> rowList) async {
     if (_userSheet == null) return;
     _userSheet!.values.map.appendRows(rowList);
   }
-
 }

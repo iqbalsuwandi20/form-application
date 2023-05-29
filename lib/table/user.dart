@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class UserFields {
   static final String id = 'id';
   static final String date = 'date';
@@ -98,6 +100,23 @@ class User {
         wrongPayment: wrongPayment ?? this.wrongPayment,
         other: other ?? this.other,
       );
+
+  static User fromJson(Map<String, dynamic> json) => User (
+    id: jsonDecode(json[UserFields.id]),
+    date: json[UserFields.date],
+    barcode: json[UserFields.barcode],
+    productName: json[UserFields.productName],
+    division: json[UserFields.division],
+    posNo: json[UserFields.posNo],
+    transNo: json[UserFields.transNo],
+    newTransNo: json[UserFields.newTransNo],
+    contentIssue: json[UserFields.contentIssue],
+    cancelItem: jsonDecode(json[UserFields.cancelItem]),
+    exchange: jsonDecode(json[UserFields.exchange]),
+    refund: jsonDecode(json[UserFields.refund]),
+    wrongPayment: jsonDecode(json[UserFields.wrongPayment]),
+    other: json[UserFields.other],
+  );
 
   Map<String, dynamic> toJson() => {
     UserFields.id: id,
