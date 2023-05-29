@@ -45,7 +45,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
             child: Icon(
               Icons.front_hand,
               color: Color(0xffc71585),
-              size: 300,
+              size: 100,
             ),
           ),
         ],

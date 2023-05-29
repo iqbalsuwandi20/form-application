@@ -93,25 +93,40 @@ class _UserFormWidgetState extends State<UserFormWidget> {
 
   Widget buildDate() => TextFormField(
     controller: controllerDate,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
       labelText: 'Date',
-      hintText: 'Ex: 01102012 (DDMMYYYY)',
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
+      hintText: 'Ex: ddmmyyyy',
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
-    validator: (value) =>
-    value != null && value.isEmpty ? 'Enter Date' : null,
+    validator: (value) => value != null && value.isEmpty ? 'Enter Date' : null,
   );
 
   Widget buildBarcode() => TextFormField(
     controller: controllerBarcode,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
       labelText: 'Barcode',
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
       hintText: 'Ex: 13',
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
     validator: (value) =>
     value != null && value.isEmpty ? 'Enter Barcode' : null,
@@ -119,12 +134,20 @@ class _UserFormWidgetState extends State<UserFormWidget> {
 
   Widget buildProductName() => TextFormField(
     controller: controllerProductName,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
       labelText: 'Product Name',
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
       hintText: 'Ex: Car',
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
     validator: (value) =>
     value != null && value.isEmpty ? 'Enter Product Name' : null,
@@ -132,12 +155,20 @@ class _UserFormWidgetState extends State<UserFormWidget> {
 
   Widget buildDivision() => TextFormField(
     controller: controllerDivision,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
       labelText: 'Division',
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
       hintText: 'Ex: Manager',
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
     validator: (value) =>
     value != null && value.isEmpty ? 'Enter Division' : null,
@@ -145,12 +176,20 @@ class _UserFormWidgetState extends State<UserFormWidget> {
 
   Widget buildPosNo() => TextFormField(
     controller: controllerPosNo,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
       labelText: 'Pos No',
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
       hintText: 'Ex: 12',
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
     validator: (value) =>
     value != null && value.isEmpty ? 'Enter Pos No' : null,
@@ -158,12 +197,20 @@ class _UserFormWidgetState extends State<UserFormWidget> {
 
   Widget buildTransNo() => TextFormField(
     controller: controllerTransNo,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
       labelText: 'Trans No',
       hintText: 'Ex: 12',
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
     validator: (value) =>
     value != null && value.isEmpty ? 'Enter Trans No' : null,
@@ -171,12 +218,20 @@ class _UserFormWidgetState extends State<UserFormWidget> {
 
   Widget buildNewTransNo() => TextFormField(
     controller: controllerNewTransNo,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
       labelText: 'New Trans No',
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
       hintText: 'Ex: 12',
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
     validator: (value) =>
     value != null && value.isEmpty ? 'Enter New Trans No' : null,
@@ -184,12 +239,20 @@ class _UserFormWidgetState extends State<UserFormWidget> {
 
   Widget buildContentIssue() => TextFormField(
     controller: controllerContentIssue,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
       labelText: 'Content Issue',
       hintText: 'Ex: This is Car',
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
     validator: (value) =>
     value != null && value.isEmpty ? 'Enter Content Issue' : null,
@@ -197,47 +260,79 @@ class _UserFormWidgetState extends State<UserFormWidget> {
 
   Widget buildCancelItem() => SwitchListTile(
     contentPadding: EdgeInsets.zero,
+    activeColor: const Color(0xffc71585),
     controlAffinity: ListTileControlAffinity.leading,
     value: cancelItem,
-    title: Text('Cancel Item'),
+    title: const Text(
+      'Cancel Item',
+      style: TextStyle(
+        color: Color(0xffc71585),
+      ),
+    ),
     onChanged: (value) => setState(() => cancelItem = value),
   );
 
   Widget buildExchange() => SwitchListTile(
     contentPadding: EdgeInsets.zero,
+    activeColor: const Color(0xffc71585),
     controlAffinity: ListTileControlAffinity.leading,
     value: exchange,
-    title: Text('Exchange'),
+    title: const Text(
+      'Exchange',
+      style: TextStyle(
+        color: Color(0xffc71585),
+      ),
+    ),
     onChanged: (value) => setState(() => exchange = value),
   );
 
   Widget buildRefund() => SwitchListTile(
     contentPadding: EdgeInsets.zero,
+    activeColor: const Color(0xffc71585),
     controlAffinity: ListTileControlAffinity.leading,
     value: refund,
-    title: Text('Refund'),
+    title: const Text(
+      'Refund',
+      style: TextStyle(
+        color: Color(0xffc71585),
+      ),
+    ),
     onChanged: (value) => setState(() => refund = value),
   );
 
   Widget buildWrongPayment() => SwitchListTile(
     contentPadding: EdgeInsets.zero,
+    activeColor: const Color(0xffc71585),
     controlAffinity: ListTileControlAffinity.leading,
     value: wrongPayment,
-    title: Text('Wrong Payment'),
+    title: const Text(
+      'Wrong Payment',
+      style: TextStyle(
+        color: Color(0xffc71585),
+      ),
+    ),
     onChanged: (value) => setState(() => wrongPayment = value),
   );
 
   Widget buildOther() => TextFormField(
     controller: controllerOther,
-    cursorColor: Color(0xffc71585),
-    decoration: InputDecoration(
+    cursorColor: const Color(0xffc71585),
+    decoration: const InputDecoration(
       labelText: 'Other',
       hintText: 'Ex: This is Car',
+      labelStyle: TextStyle(
+        color: Color(0xffc71585),
+      ),
       enabledBorder: InputBorder.none,
       border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xffc71585),
+        ),
+      ),
     ),
-    validator: (value) =>
-    value != null && value.isEmpty ? 'Enter Other' : null,
+    // validator: (value) =>
+    // value != null && value.isEmpty ? 'Enter Other' : null,
   );
 
   Widget buildSubmit() => ButtonWidget(

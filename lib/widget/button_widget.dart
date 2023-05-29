@@ -14,6 +14,7 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        primary: const Color(0xffc71585),
         minimumSize: const Size.fromHeight(50),
         shape: const StadiumBorder(),
       ),
@@ -21,7 +22,7 @@ class ButtonWidget extends StatelessWidget {
       child: FittedBox(
         child: Text(
           text,
-          style: const TextStyle(fontSize: 20, color: Color(0xffc71585)),
+          style: const TextStyle(color: Colors.white),
         ),
       ),
     );
