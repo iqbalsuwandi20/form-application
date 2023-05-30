@@ -3,9 +3,11 @@ import 'package:form_application/table/user.dart';
 import 'package:form_application/widget/button_widget.dart';
 
 class UserFormWidget extends StatefulWidget {
+  final User? user;
   final ValueChanged<User> onSavedUser;
   const UserFormWidget({
     Key? key,
+    this.user,
     required this.onSavedUser,
   }) : super(key: key);
 
@@ -37,20 +39,44 @@ class _UserFormWidgetState extends State<UserFormWidget> {
     initUser();
   }
 
+  @override
+  void didUpdateWidget(covariant UserFormWidget oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+
+    initUser();
+  }
+
   void initUser() {
-    controllerDate = TextEditingController();
-    controllerBarcode = TextEditingController();
-    controllerProductName = TextEditingController();
-    controllerDivision = TextEditingController();
-    controllerPosNo = TextEditingController();
-    controllerTransNo = TextEditingController();
-    controllerNewTransNo = TextEditingController();
-    controllerContentIssue = TextEditingController();
-    this.cancelItem = true;
-    this.exchange = true;
-    this.refund = true;
-    this.wrongPayment = true;
-    controllerOther = TextEditingController();
+    final date = widget.user == null ? "" : widget.user!.date;
+    final barcode = widget.user == null ? "" : widget.user!.barcode;
+    final productName = widget.user == null ? "" : widget.user!.productName;
+    final division = widget.user == null ? "" : widget.user!.division;
+    final posNo = widget.user == null ? "" : widget.user!.posNo;
+    final transNo = widget.user == null ? "" : widget.user!.transNo;
+    final newTransNo = widget.user == null ? "" : widget.user!.newTransNo;
+    final contentIssue = widget.user == null ? "" : widget.user!.contentIssue;
+    final cancelItem = widget.user == null ? true : widget.user!.cancelItem;
+    final exchange = widget.user == null ? true : widget.user!.exchange;
+    final refund = widget.user == null ? true : widget.user!.refund;
+    final wrongPayment = widget.user == null ? true : widget.user!.wrongPayment;
+    final other = widget.user == null ? "" : widget.user!.other;
+
+    setState(() {
+      controllerDate = TextEditingController(text: date);
+      controllerBarcode = TextEditingController(text: barcode);
+      controllerProductName = TextEditingController(text: productName);
+      controllerDivision = TextEditingController(text: division);
+      controllerPosNo = TextEditingController(text: posNo);
+      controllerTransNo = TextEditingController(text: transNo);
+      controllerNewTransNo = TextEditingController(text: newTransNo);
+      controllerContentIssue = TextEditingController(text: contentIssue);
+      this.cancelItem = cancelItem;
+      this.exchange = exchange;
+      this.refund = refund;
+      this.wrongPayment = wrongPayment;
+      controllerOther = TextEditingController(text: other);
+    });
   }
 
 
