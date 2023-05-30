@@ -51,6 +51,13 @@ class UserSheetsApi {
     return lastRow == null ? 0 : int.tryParse(lastRow.first) ?? 0;
   }
 
+  static Future<List<User>> getAll() async {
+    if (_userSheet == null) return <User>[];
+
+    final users = await _userSheet!.values.map.allRows();
+    return users == null ? <User>[] : users.map(User.fromJson).toList();
+  }
+
   static Future<User?> getById(int id) async {
     if (_userSheet == null) return null;
 

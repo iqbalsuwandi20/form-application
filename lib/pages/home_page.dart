@@ -13,7 +13,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  User? user;
+  List<User> users = [];
+  int index = 0;
 
   @override
   void initState() {
@@ -23,11 +24,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future getUsers() async {
-    final user = await UserSheetsApi.getById(2);
-    print(user!.toJson());
+    final users = await UserSheetsApi.getAll();
 
     setState(() {
-      this.user = user;
+      this.users = users;
     });
   }
 
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(32),
         child: SingleChildScrollView(
           child: UserFormWidget(
-            user: user,
+            user: users.isEmpty ? null : users[index],
             onSavedUser: (user) async {
               // final id = await UserSheetsApi.getRowCount() + 1;
               // final newUser = user.copy(id: id);
